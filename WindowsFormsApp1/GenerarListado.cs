@@ -156,10 +156,12 @@ namespace WindowsFormsApp1
             string fila;
             string listado = "Listado_" + fecha;
             string path = Path.GetFullPath("..\\..\\..\\..\\" + listado + ".txt");
+            string c176 = Encoding.Default.GetString(new byte[] { 176 });
+            string c209 = Encoding.Default.GetString(new byte[] { 209 });
 
             if (!File.Exists(path))
             {
-                fila = "CENTRO" + "," + "AÑO" + "," + "FACTURA" + "," + "MEDIO" + "," + "PTO DESCARGA" + "," + "DESTINO" + "," + "Nº LOTE" + "," + "Nº REMOLQUE" + "," + "CHASIS" + "\n";
+                fila = "CENTRO" + "," + "A"+ c209 + "O" + "," + "FACTURA" + "," + "MEDIO" + "," + "PTO DESCARGA" + "," + "DESTINO" + "," + "N"+ c176+ " LOTE" + "," + "N" + c176 + " REMOLQUE" + "," + "CHASIS" + "\n";
                 return fila;
             }
             else { return "EXISTE"; }
@@ -207,7 +209,10 @@ namespace WindowsFormsApp1
         {
             string listado = "Listado_" + fecha;
             //generar una carpeta para meter el repo para que genere los listados en la carpeta
+            //este es correcto para ejecutarlo instalando o el archivo Debug directamente
             string path = Path.GetFullPath("..\\..\\..\\..\\" + listado + ".txt");
+            //pruebas con el archivo BAT como acceso directo, así lo genera en la carpeta donde la deje C, D o donde sea y no pide permisos de administrador porque lo escriba en C:\
+            //string path = Path.GetFullPath(listado + ".txt");
             if (File.Exists(path))
             {
                 return true;
@@ -225,22 +230,27 @@ namespace WindowsFormsApp1
         {
             string listado = "Listado_" + fecha;
             //generar una carpeta para meter el repo para que genere los listados en la carpeta
+            //este es correcto para ejecutarlo instalando o el archivo Debug directamente
             string path = Path.GetFullPath("..\\..\\..\\..\\" + listado + ".txt");
-            Boolean file = File.Exists(path);
+            //pruebas con el archivo BAT como acceso directo, así lo genera en la carpeta donde la deje C, D o donde sea y no pide permisos de administrador porque lo escriba en C:\
+            //string path = Path.GetFullPath(listado + ".txt");
+            //Boolean file = File.Exists(path);
+
             if (File.Exists(path))
             {
                 // Open the file to read from.
                 using (StreamWriter fs = File.AppendText(path))
                 {
-                    fs.Write(listadoFinal);
+                    fs.Write(listadoFinal, 0, Encoding.Default);
                     return true;
                 }
+                
             }
             else {
                 // Create a file to write to.
                 using (StreamWriter fs = File.CreateText(path))
                 {
-                    fs.Write(listadoFinal);
+                    fs.Write(listadoFinal, 0, Encoding.Default);
                     return true;
                 }
             }
