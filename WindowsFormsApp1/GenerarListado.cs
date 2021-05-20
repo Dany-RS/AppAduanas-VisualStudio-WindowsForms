@@ -155,7 +155,8 @@ namespace WindowsFormsApp1
         {
             string fila;
             string listado = "Listado_" + fecha;
-            string path = Path.GetFullPath("..\\..\\..\\..\\" + listado + ".txt");
+            //string path = Path.GetFullPath("..\\..\\..\\..\\" + listado + ".txt");
+            string path = Path.GetFullPath(".\\" + listado + ".txt");
             string c176 = Encoding.Default.GetString(new byte[] { 176 });
             string c209 = Encoding.Default.GetString(new byte[] { 209 });
 
@@ -210,7 +211,8 @@ namespace WindowsFormsApp1
             string listado = "Listado_" + fecha;
             //generar una carpeta para meter el repo para que genere los listados en la carpeta
             //este es correcto para ejecutarlo instalando o el archivo Debug directamente
-            string path = Path.GetFullPath("..\\..\\..\\..\\" + listado + ".txt");
+            //string path = Path.GetFullPath("..\\..\\..\\..\\" + listado + ".txt");
+            string path = Path.GetFullPath(".\\" + listado + ".txt");
             //pruebas con el archivo BAT como acceso directo, así lo genera en la carpeta donde la deje C, D o donde sea y no pide permisos de administrador porque lo escriba en C:\
             //string path = Path.GetFullPath(listado + ".txt");
             if (File.Exists(path))
@@ -231,7 +233,7 @@ namespace WindowsFormsApp1
             string listado = "Listado_" + fecha;
             //generar una carpeta para meter el repo para que genere los listados en la carpeta
             //este es correcto para ejecutarlo instalando o el archivo Debug directamente
-            string path = Path.GetFullPath("..\\..\\..\\..\\" + listado + ".txt");
+            string path = Path.GetFullPath(".\\" + listado + ".txt");
             //pruebas con el archivo BAT como acceso directo, así lo genera en la carpeta donde la deje C, D o donde sea y no pide permisos de administrador porque lo escriba en C:\
             //string path = Path.GetFullPath(listado + ".txt");
             //Boolean file = File.Exists(path);
