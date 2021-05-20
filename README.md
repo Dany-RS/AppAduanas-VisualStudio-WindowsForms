@@ -25,3 +25,5 @@ CENTRO,AÑO,FACTURA,MEDIO,PTO DESCARGA,DESTINO,Nº LOTE,Nº REMOLQUE,CHASIS
   - Los ficheros se crean con la nomenclatura "Listado_fechadeldía" la fecha del día en formato dd-mm-yyyy
   - Se crea el fichero como .TXT listo para cargar en excel, con todos los elementos separados por comas.
 
+![App Aduanas 1](https://user-images.githubusercontent.com/56634055/119023613-7002bc00-b9a2-11eb-86ed-df0e4ff3e360.jpg)
+![App Aduanas 2](https://user-images.githubusercontent.com/56634055/119023619-72fdac80-b9a2-11eb-8258-70ed4ed4a5ee.jpg)
